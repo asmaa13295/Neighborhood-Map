@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neighborhood-map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav><p class="title h1 text-center">Neighborhood Map</p></nav>
+   	<aside class="side col-xs-5 col-md-3">
+   			<input class="box search-input" placeholder="  Type your place here ....." type="text" data-bind="textInput: search">
+        <ul data-bind="foreach: searchMarkers()">
+          <li class="h4" data-bind="text: title, click: itemClicked"></li>
+        </ul>
+   	</aside>
+   	<div class="map col-xs-7 col-md-9" id="map"></div>
+
+   	<script src="js/lib/knockout-3.4.2.js"></script>
+   	<script src="js/home.js"></script>
+    <script src="js/locations.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+   	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8AOrCjhE6hlkoH3lphQKaMlNY6R0yp54&callback=initMap"
+	    async defer onerror="errorHandling()" ></script>
+  </body>
+</html>
